@@ -1,0 +1,81 @@
+
+<!--banner start-->
+<div class="hero-image">
+    <div class="hero-text">
+      <span><i>I'm Looking For</i></span>
+      <form #searc="ngForm">
+        <div class="row" style="margin-top:25px">
+          <div class="col-md-10">
+             <div class="form-group">
+               <input type="text" class="form-control" name="search" placeholder="Search">
+             </div>
+          </div>
+          <div class="col-md-2">
+               <button class="search-btn"mat-button>
+                 <mat-icon>search</mat-icon>
+                 Search
+               </button>
+          </div>
+          </div>
+        <div class="row" style="margin-top:10px">
+          <div class="col-md-2">
+            <section class="example-section">
+              <mat-checkbox name="fulltime"class="example-margin">Check me!</mat-checkbox>
+            </section>
+          </div>
+          <div class="col-md-2">
+            <section class="example-section">
+              <mat-checkbox name="prttime" class="example-margin">Check me!</mat-checkbox>
+            </section>
+          </div>
+          <div class="col-md-6">
+            <select name="country"  class="form-control">
+              <option value="">Select country...</option>
+              <option *ngFor="let country of allCountry" [value]="country.id">{{country.country}}</option>
+          </select>
+          </div>
+        </div>
+      </form>
+      <button class="register-btn" mat-button data-toggle="modal" data-target="#registermodel">Register</button>
+     
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  
+  <!--banner end-->
+  
+  <!--about section-->
+  <div class="section">
+    <div class="container text-center">
+      <p><i>we're leaders in</i></p>
+      <h1>Creative Digital Recruitment</h1>
+      <div class="paragraph">
+        <p>We have assembled this guide to creating great content as a recruiter 
+          so you can start to reap the benefits and get noticed by amazing candidates.We have assembled this guide to creating great content as a recruiter 
+          so you can start to reap the benefits and get noticed by amazing candidates.</p>
+      </div>
+      
+      <div class="button">
+        <button mat-button color="accent" class="find">FIND OUT MORE ABOUT US!</button>
+      </div>
+        
+    </div>
+  </div>
+  <!--about section end-->
+  
+  <!--subscribe-->
+  <div class="section-subscribe">
+    <div class="container text-center text-white">
+      <p>Subscribe to Our Job Seekers Mailing list</p>
+        <div class="subscribe-form mt-20"> 
+          <form #suscribe="ngForm">
+            <input name="txtName" id="txtName" class="form-control" placeholder="Enter Your Mail" required>
+            <button  class="errspan" type="submit"><mat-icon>mail</mat-icon></button>
+          </form>
+        </div> 
+      </div>
+    </div>
+  
+  <!--subscribe end-->
+  
+  <app-registerform></app-registerform>

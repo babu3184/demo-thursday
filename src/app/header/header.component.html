@@ -1,0 +1,25 @@
+<!--toolbar start-->
+<mat-toolbar fxLayout="row" color="accent">
+  <div class="container">
+    <span fxFlex> <a [routerLink]="['/home']" routerLinkActive="router-link-active">Demo App</a></span>
+    <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.label}}
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container *ngFor="let item of menuItems">
+            <button mat-menu-item>
+                <mat-icon class="mr">{{item.icon}}</mat-icon>
+                {{item.label}}
+            </button>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-menu>
+    </div>
+</mat-toolbar>
+
+<!--toolbar end-->
+<router-outlet></router-outlet>

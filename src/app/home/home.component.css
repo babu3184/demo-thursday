@@ -1,0 +1,227 @@
+.book{
+    font-size: 25px;
+    padding: 0px 5px;
+};
+img{
+    height:600px;
+    width:100%
+}
+@media (min-width: 1281px) {
+  img{
+      height:600px;
+      width:100%
+    }
+};
+@media (min-width: 768px) and (max-width: 1024px) {
+  img{
+      height:300px;
+      width:100%
+    }
+};
+@media (min-width: 1025px) and (max-width: 1280px) {
+  img{
+        height:300px;
+        width:100%
+    }
+};
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  img{
+        height:300px;
+        width:100%
+    }
+};
+@media (min-width: 320px) and (max-width: 480px) {
+    img{
+        height:200px;
+        width:100%
+    }
+    .hero-text{
+        width:80% !important;
+    }
+    .hero-text button{
+        padding:0px 13px !important;
+    }
+    .hero-text span{
+        font-size: 20px !important;
+    }
+    td{
+        padding:4px 3px !important;
+    }
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px !important;
+        line-height: 3;
+    }
+    .modal-footer{
+        padding:10px 18px !important;
+    }
+    mat-slider {
+        width: 256px ;
+    }
+    .form-group1{
+        width: 309px !important;
+    }
+    .icon { 
+        padding: 7px !important; 
+        min-width: 263px !important; 
+        color:red
+    } 
+    .section-subscribe{
+        font-size: 11px !important;
+    }
+};
+@media (min-width: 481px) and (max-width: 767px) {
+    img{
+        height:200px;
+        width:100%
+    }
+};
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/keyboard-2586342_1920.jpg");
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .hero-text span{
+      font-size: 30px ;
+      margin-bottom: 5px !important;
+      letter-spacing: 0.1rem;
+  }
+  .hero-text {
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
+  .hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 1px 30px;
+    color: white;
+    background-color: #ff4081;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid #ff4081
+  }
+  .hero-text button:hover{
+      background-color: transparent;
+      border:1px solid #ff4081;
+      color:#ff4081;
+  }
+  label {
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+
+footer {
+    font-size: .8rem;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.register-btn{
+    margin-top:40px
+
+}
+.modal-header{
+    background-color:#ff4081;
+    
+}
+.modal-title{
+    font-size: 20px;
+    margin-top:5px
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
+    color:#ff4081;
+}
+
+
+.form-group1{
+    width: 100%;
+}
+
+
+
+.section{
+    background-color: #e8e8e89c;
+    padding:120px 0px;
+}
+.section i{
+    letter-spacing: 0.1rem;
+    font-size: 18px;
+}
+h1{
+    font-size:35px;
+    padding-bottom: 30px;
+}
+h1::after
+{
+  content: '';
+  border-bottom: 3px solid #000;
+  width: 115px;
+  display: block;
+  margin: 0 auto;
+  padding-top:43px
+}
+.button{
+    padding-top:43px
+}
+.find{
+    border:1px solid #ff4081;
+    background-color: #ff4081;
+    color:white;
+}
+.find:hover{
+    border:1px solid #ff4081;
+    background-color: transparent;
+    color:#ff4081
+}
+.section-subscribe{
+    padding:100px 0px;
+    background-color: #010101;
+}
+
+.subscribe-form{
+    max-width:319px;
+    margin:auto;
+    margin-top:25px;
+} 
+.section-subscribe p{
+    letter-spacing: 0.1rem;
+}
+.errspan {
+    float: right;
+    margin-right: -3px;
+    margin-top: -28px;
+    position: relative;
+    z-index: 2;
+    color: #ff4081;
+    font-size:19px;
+    border:none;
+    background-color: transparent;
+}
+.errspan:hover {
+    background-color: transparent;
+}
+select{
+    font-size:11px;
+}
+option{
+    font-size:13px;
+    padding:5px !important;
+}

@@ -1,0 +1,150 @@
+
+  <!-- Button trigger modal -->
+<div class="modal fade registermodel-lg" id="registermodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered"  role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle" >Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group form-group1  col-md-4">
+                <!--<label for="inputEmail4">Email</label>-->
+                <div class="col-md-4 text-center">
+                  <div class="kv-avatar">
+                      <div class="file-loading">
+                        <div class="img-space">
+
+                          <ng-container *ngIf="isImageSaved; else elseTemplate">
+                              <img [src]="cardImageBase64" />
+                          </ng-container>
+                          <ng-template #elseTemplate>
+  
+                              <img [src]="url" class="img-responsive">
+                          </ng-template>
+  
+                      </div>
+                        <label for="upload-photo">UploadProfile</label><br>
+                          <input name="profile" type="file" id="upload-photo"  required (change)="fileChangeEvent($event)" ngModel>
+                      </div>
+                      <div class="text-danger">
+                      {{imageError}}
+                      </div>
+                     
+                  </div>
+                 
+              </div>
+              </div>
+              
+            <div class="col-md-8 form-group form-row">
+                <div class="form-group col-md-6">
+                   <input type="text" required  name="fname" class="form-control" placeholder="First Name" 
+                    [(ngModel)]="userservice.currentUser.fname"
+                    #fname="ngModel"
+                    [ngClass]="fname.invalid">
+
+                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="text-danger">
+                      <div *ngIf="fname.errors.required">
+                        Name is required.
+                      </div>
+                      </div>
+                </div>
+
+
+              <div class="form-group col-md-6">
+                  <input type="text" class="form-control" name="lname" placeholder="Last Name" 
+                  [(ngModel)]="userservice.currentUser.lname">
+                </div>
+
+
+                <div class="form-group col-md-12">
+                  <input type="email" class="form-control" name="email" placeholder="Email"
+                  [(ngModel)]="userservice.currentUser.email">
+                </div>
+
+
+                <div class="form-group col-md-12">
+                  <input type="text" class="form-control" name="number" placeholder="(025)-99999" 
+                  [(ngModel)]="userservice.currentUser.number">
+                </div>
+
+
+                <div class="col-md-12 form-group">
+                  <table>
+                    <tr>
+                      <td style="padding-right:9px;font-size: 12px;">Age</td>
+                      <td><mat-slider name="age" thumbLabel min="20" max="60" step="1" value="1"
+                         [(ngModel)]="userservice.currentUser.age"></mat-slider></td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="col-md-12 form-group">
+                  <select class="form-control" name= "country" (change)="changeCountry($event.target.value)"
+                  [(ngModel)]="userservice.currentUser.country">
+                    <option>Select Country</option>
+                    <option *ngFor ="let count of countryList">{{count.country}} </option>
+                  </select>
+                </div>
+
+                <div class="col-md-12 form-group">
+                  <select class="form-control" name="states" 
+                  [(ngModel)]="userservice.currentUser.states">
+                   <option value="">State</option>
+                    <option *ngFor ="let state of state">{{state}}</option>
+                  </select>
+                </div>
+
+               <div class="col-md-12 form-group">
+                  <select name="userservice.currentUser.address" class="form-control" 
+                  [(ngModel)]="userservice.currentUser.address">
+                    <option value="">Address</option>
+                    <option value="home">Home</option>
+                    <option value="office">Office</option>
+                  </select>
+                 </div>
+               
+                 <div class="col-md-12 form-group" *ngIf="userservice.currentUser.address == 'home'">
+                  <textarea rows="1" type="text" class="form-control" name="userservice.currentUser.haddress1" placeholder="Home Address1" 
+                  [(ngModel)]="userservice.currentUser.haddress1"></textarea>
+                  <br>
+
+                  <textarea rows="1" type="text" class="form-control" name="userservice.currentUser.haddress2" placeholder="Home Address2" 
+                  [(ngModel)]="userservice.currentUser.haddress2"></textarea>
+                </div>
+
+
+              <div class="col-md-12 form-group" *ngIf="userservice.currentUser.address == 'office'">
+                <textarea rows="1" type="text" class="form-control" name="userservice.currentUser.caddress1" placeholder="Company Address1" 
+                [(ngModel)]="userservice.currentUser.caddress1"></textarea>
+                <br>
+
+                <textarea rows="1" type="text" class="form-control" name="userservice.currentUser.caddress2" placeholder="Company Address2" 
+                [(ngModel)]="userservice.currentUser.caddress2"></textarea>
+              
+              </div>
+                 
+                <div class="form-group">
+                  <mat-checkbox name="subscribe" class="example-margin" name="check" 
+                  [(ngModel)]="userservice.currentUser.subscribe">Check me!</mat-checkbox>
+                </div>
+
+
+                <div class="col-md-12 text-right form-group">
+                <button mat-button  data-dismiss="modal">Clear</button>
+                <a [routerLink]="['/user-profile']" mat-raised-button color="accent" type="button" data-dismiss="modal" 
+               (click)="CreateAndUpdate(userservice.currentUser)">Submit</a>
+        
+               </div>
+              </div>
+             
+            </div>
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>

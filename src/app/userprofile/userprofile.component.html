@@ -1,0 +1,27 @@
+
+    <table class="table table-stripped">
+    <tr></tr>
+    <tr *ngFor="let user of allUsers">
+        <td>{{user.fname}}</td>
+        <td>{{user.lname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.number}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.country}}</td>
+        <td>{{user.state}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.haddress1}}</td>
+        <td>{{user.haddress2}}</td>
+        <td>{{user.caddress1}}</td>
+        <td>{{user.caddress2}}</td>
+        <td>{{user.subscribe}}</td>
+
+        <td>
+            <button mat-raised-button class="btn-danger" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+        <td>
+            <button mat-raised-button class="btn-primary" data-toggle="modal" data-target="#registermodel" (click)="edit(user)">Edit</button>
+        </td>
+    </tr>
+</table>
+<app-registerform></app-registerform>
